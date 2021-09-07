@@ -26,4 +26,4 @@ jobs:
     steps:
       - run: echo "test"
       - run: echo "test"
-      - eee
+      - run: echo "test {{job.hoge}}"
