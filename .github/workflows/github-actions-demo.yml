@@ -24,6 +24,10 @@ jobs:
   Explore-GitHub-Actions2:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "test"
-      - run: echo "test"
-      - run: iii
+      - run: echo "test2"
+      - run: echo "test2"
+  Explore-GitHub-Actions3:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "test3"
+
