@@ -1,6 +1,6 @@
 name: GitHub Actions Demo
 on: 
-  create
+  push
 
 
 
