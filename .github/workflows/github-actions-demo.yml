@@ -3,6 +3,9 @@ name: GitHub Actions Demo
 on:
   repository_dispatch:
     types: [hogehoge]
+
+  workflow_dispatch:
+
 env: 
   SECRET_HOGE: ${{secrets.HOGEHOGE_VALUE}} 
 jobs:
