@@ -6,9 +6,8 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      curl \
-       -X POST \
-       -H "Accept: application/vnd.github.v3+json" \
-       https://api.github.com/repos/hidehito-f-personal/Check-Protect-Organization/dispatches \
-       -d '{"event_type":"hogehoge"}'
+      run: curl -X POST \
+                -H "Accept: application/vnd.github.v3+json" \
+                https://api.github.com/repos/hidehito-f-personal/Check-Protect-Organization/dispatches \
+                -d '{"event_type":"hogehoge"}'
 
