@@ -13,6 +13,6 @@ jobs:
       - run: curl -X POST \
                   -H "Authorization:token ${{env.TOKEN}}" \
                   -H "Accept:application/vnd.github.v3+json" \
-                  https://api.github.com/repos/hidehito-f-personal/Check-Protect-Organization/dispatches \
+                  https://api.github.com/repos/f-test-personal/Check-repository-dispatch/dispatches \
                   -d '{"event_type":"hogehoge"}'
 
