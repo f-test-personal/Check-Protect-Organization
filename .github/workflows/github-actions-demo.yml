@@ -14,12 +14,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo ${{ github.repository_owner }}
 
 
   build_and_push:
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: sample-app
+      REPO_NAME: check-protect-organization
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -40,4 +42,4 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest
+            ghcr.io/${{ github.repository_owner }}/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:latest
