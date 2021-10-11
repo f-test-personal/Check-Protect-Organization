@@ -21,5 +21,3 @@ jobs:
     steps:
       - run: echo "test3 ${{ job.hogehoge }}"
       - run: echo "hogehoge"
-
-
