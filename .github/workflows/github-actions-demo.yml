@@ -22,8 +22,4 @@ jobs:
       - run: echo "test3 ${{ job.hogehoge }}"
       - run: echo "hogehoge"
 
-  Explore-GitHub-Actions4:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "test3 ${{ job.hogehoge }}"
-      - run: echo "hogehogepiyo"
+
