@@ -1,7 +1,7 @@
 name: GitHub Actions Demo
 on: 
   pull_request:
-  push:
+#  push:
 
 jobs:
   Explore-GitHub-Actions:
@@ -17,5 +17,5 @@ jobs:
   Explore-GitHub-Actions3:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "test3 ${{ job.hogepiyo }}"
+      - run: echo "test3 ${{ job.hogehoge }}"
       - run: echo "hogehoge"
