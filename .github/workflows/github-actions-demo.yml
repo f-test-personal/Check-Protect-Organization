@@ -1,8 +1,10 @@
 name: GitHub Actions Demo
 on: 
   pull_request:
+
 ##  push:
 #  workflow_dispatch:
+
 
 jobs:
   Explore-GitHub-Actions:
@@ -10,11 +12,13 @@ jobs:
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      
   Explore-GitHub-Actions2:
     runs-on: ubuntu-latest
     steps:
       - run: echo "test2"
       - run: echo "test2"
+      
   Explore-GitHub-Actions3:
     runs-on: ubuntu-latest
     steps:
@@ -22,3 +26,8 @@ jobs:
       - run: echo "hogehoge"
       - run: curl hogehoge
 
+  Explore-GitHub-Actions4:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "test3 ${{ job.hogehoge }}"
+      - run: echo "hogehogehoge"
