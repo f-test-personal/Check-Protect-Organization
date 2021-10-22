@@ -7,9 +7,12 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo hello > world.txt
+      - run: |
+          mkdir path/to/artifact
+          echo hello > path/to/artifact/world.txt
+          
       - uses: actions/upload-artifact@v2
         with:
           name: hoge hoge
-          path: build/libs/world.txt
+          path: path/to/artifact/world.txt
 
