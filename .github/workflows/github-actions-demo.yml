@@ -7,23 +7,8 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🍏 This job's status is ${{ job.status }}."
-      
-  Explore-GitHub-Actions2:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "test2"
-      - run: echo "test2"
-      
-  Explore-GitHub-Actions3:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "test3 ${{ job.hogehoge }}"
-      - run: echo "hogehoge"
+      - run: echo hello > world.txt
+      - uses: actions/upload-artifact@v2
+        with:
+          path: world.txt
 
-  Explore-GitHub-Actions4:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "test3 ${{ job.hogehoge }}"
-      - run: echo "hogehogehoge"
