@@ -16,7 +16,7 @@ jobs:
           name: hoge-hoge
           path: path/to/artifact/world.txt
           
-      - uses: download-artifact@v2
+      - uses: actions/download-artifact@v2
         with:
           name: hoge-hoge 
           path: path/to/artifact/
