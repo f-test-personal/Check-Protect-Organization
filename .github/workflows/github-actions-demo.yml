@@ -21,7 +21,7 @@ jobs:
         with:
           name: hoge-hoge 
           path: path/to/artifact/
-      - run: 
-          ls path/to/artifact/
-          ls path/to
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: path/to/artifact
 
