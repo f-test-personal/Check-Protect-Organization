@@ -15,4 +15,4 @@ jobs:
       - run: echo "$GITHUB_REF"
       # - run: echo GITHUB_REF
       - run: echo ${{github.ref}}
-      - run: echo ${GITHUB_REf#refs/heads/}
+      - run: echo ${GITHUB_REF#refs/heads/}
