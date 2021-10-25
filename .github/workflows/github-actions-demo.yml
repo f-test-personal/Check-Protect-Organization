@@ -17,3 +17,4 @@ jobs:
       - run: echo ${{github.ref}}
       - run: echo ${GITHUB_REF#refs/heads/}
       - run: echo $GITHUB_REF#refs/heads/
+      - run: echo $GITHUB_REF#refs/heads/-$GITHUB_SHA
