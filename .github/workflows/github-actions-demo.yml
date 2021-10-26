@@ -26,8 +26,8 @@ jobs:
   Explore-GitHub-Actions2: 
     runs-on: ubuntu-latest
     #error if: $GITHUB_REF =~ "^refs/heads/feature-.*$"
-    # if: ${{github.ref}} =~ ^refs/heads/feature-.*$
-    if: github.ref =~ ^refs/heads/feature-.*$
+    if: ${{github.ref}} =~ ^refs/heads/feature-.*$
+    # if: github.ref =~ ^refs/heads/feature-.*$
     steps:
       - run: echo "hoge"
       
