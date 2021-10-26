@@ -2,6 +2,9 @@ name: GitHub Actions Demo
 on: 
   push
 
+env:
+  HOGE1: "HOGE"
+  HOGE2: "HOGEHOGE"
 
 
 jobs:
@@ -18,3 +21,5 @@ jobs:
       - run: echo ${GITHUB_REF#refs/heads/}
       - run: echo $GITHUB_REF#refs/heads/
       - run: echo $GITHUB_REF#refs/heads/-$GITHUB_SHA
+      - run: echo ${{env.HOGE1}}
+      - run: echo ${env.HOGE1}
