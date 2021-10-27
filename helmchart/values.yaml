@@ -1,0 +1,62 @@
+replicaCount: 1
+
+image:
+  repository: "" #TODO: コンテナイメージリポジトリ確定後修正
+  pullPolicy: ALways
+  tag: TAG_VARIABLE
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: NodePort
+  port: 8080
+  targetPort: 8080
+  nodePort: 8080
+  
+ingress:
+  enabled: true
+  className: ""
+  annotations: {}
+  hosts:
+    - host: sample.com
+      path: "" #TODO: サンプルWebアプリケーションで作成したAPIのパスを記述する。キーの値はこれであっているか要確認
+      paths: 
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
+resources: {}
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+minReadySeconds: 30
+
+strategy:
+  rollingUpdate:
+    maxSurge: 1
+  
+
+  
