@@ -26,6 +26,11 @@ jobs:
           ls mychart
           echo "----------------------------------" 
           ls mychart/templates
+          
+      - uses: actions/upload-artifact@v2
+        with:
+            name: helms
+            path: mychart
         
       
 
