@@ -6,24 +6,15 @@ on:
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    container:
+      image: alpine:3.14.2
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: |
+          curl -fsSL https://get.helm.sh/helm-v3.6.3-linux-amd64.tar.gz
+          tar -zxvf helm-v3.6.3-linux-amd64.tar.gz
+          mv linux-amd64/helm /usr/local/bin/helm
+          
+          helm version
+        
       
-  Explore-GitHub-Actions2:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "test2"
-      - run: echo "test2"
-      
-  Explore-GitHub-Actions3:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "test3 ${{ job.hogehoge }}"
-      - run: echo "hogehoge"
 
-  Explore-GitHub-Actions4:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "test3 ${{ job.hogehoge }}"
-      - run: echo "hogehogehoge"
