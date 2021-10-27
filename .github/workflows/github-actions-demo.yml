@@ -10,9 +10,14 @@ jobs:
 #    image: alpine:3.14.2
     steps:
       - run: |
-          curl -fsSL https://get.helm.sh/helm-v3.6.3-linux-amd64.tar.gz
-          tar -zxvf helm-v3.6.3-linux-amd64.tar.gz
-          mv linux-amd64/helm /usr/local/bin/helm
+          # curl -fsSL https://get.helm.sh/helm-v3.6.3-linux-amd64.tar.gz
+          # tar -zxvf helm-v3.6.3-linux-amd64.tar.gz
+          # mv linux-amd64/helm /usr/local/bin/helm
+          
+          curl -L https://get.helm.sh/helm-v3.6.3-linux-amd64.tar.gz -o helm.tar.gz
+          tar xvfz helm.tar.gz linux-amd64/helm
+          chmod +x ./linux-amd64/helm
+          mv ./linux-amd64/helm /usr/local/bin
           
           helm version
         
