@@ -20,6 +20,9 @@ jobs:
           mv ./linux-amd64/helm /usr/local/bin
           
           helm version
+          
+          helm create mychart
+          ls mychart
         
       
 
