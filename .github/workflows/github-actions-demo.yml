@@ -6,8 +6,8 @@ on:
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    container:
-      image: alpine:3.14.2
+#    container:
+#    image: alpine:3.14.2
     steps:
       - run: |
           curl -fsSL https://get.helm.sh/helm-v3.6.3-linux-amd64.tar.gz
