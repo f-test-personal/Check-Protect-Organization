@@ -2,26 +2,19 @@ name: GitHub Actions Demo
 on: 
   # pull_request:
   push:
+  
+  workflow_dispatch:
+env: 
+  IMAGE_NAME: "hoge"
+  IMAGE_TAG: "piyo"
 
 jobs:
-  Explore-GitHub-Actions:
+  push-image: 
+    name: push-image
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          mkdir -p path/to/artifact
-          echo hello > path/to/artifact/world.txt
-          
-      - uses: actions/upload-artifact@v2
-        with:
-          name: hoge-hoge
-          path: path/to/artifact/world.txt
-          
-      - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
-        with:
-          name: hoge-hoge 
-          path: path/to/artifact/
-      - name: Display structure of downloaded files
-        run: ls -R
-        working-directory: path/to/artifact
-
+      - name: login-to-docker
+        run: docker login docker.pkg.github.com --username hidehito-f-personal --password ${{secrets.GITHUB_TOKEN}}
+      - name: push-image
+        run: docker push docker.pkg.github.com/${{github.repository}}/${IMAGE_NAME}:${IMAGE_TAG}
+         
