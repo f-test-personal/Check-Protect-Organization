@@ -16,5 +16,5 @@ jobs:
       - name: login-to-docker
         run: docker login docker.pkg.github.com --username hidehito-f-personal --password ${{secrets.GITHUB_TOKEN}}
       - name: push-image
-        run: docker push docker.pkg.github.com/${{github.repository}}/${IMAGE_NAME}:${IMAGE_TAG}
+        run: docker push docker.pkg.github.com/${{github.repository}}/${{env.IMAGE_NAME}}:${{IMAGE_TAG}}
          
